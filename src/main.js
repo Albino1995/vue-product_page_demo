@@ -1,14 +1,25 @@
 import Vue from 'vue'
-import App from './App'
-import router from './router'
-import Vuex from 'vuex'
+// import App from './App'
+import Layout from './components/layout'
+import IndexPage from './pages/index'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+let router = new VueRouter({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      component: IndexPage
+    }
+  ]
+})
 
-Vue.use(Vuex)
-Vue.config.productionTip = false
-
-/* eslint-disable no-new */
-new Vue({
+let vm = new Vue({
   el: '#app',
   router,
-  render: h => h(App)
+  render: h => h(Layout)
+})
+
+Vue.use({
+  vm
 })
