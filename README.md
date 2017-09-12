@@ -1,10 +1,20 @@
 # product-page
 
-> A Vue.js project
+> 学习vue.js试做的一个产品销售单页面应用
 
 ## Build Setup
 
 ``` bash
+
+#全局安装vue脚手架
+npm install -g vue-cli 
+
+#创建项目
+vue init webpack ProductPage
+
+#安装vuex
+npm install vuex --save
+
 # install dependencies
 npm install
 
