@@ -34,4 +34,29 @@ npm run build
 npm run build --report
 ```
 
+## mark down
+
+#json-server模拟api设置
+
+``` bash
+
+// build/dev-server.js
+var jsonServer = require('json-server')
+var apiServer = jsonServer.create()
+var apiRouter = jsonServer.router('db.json')
+var middlewares = jsonServer.defaults()
+
+apiServer.use(middlewares)
+apiServer.use('/api', apiRouter)
+apiServer.listen(port + 1, function () {
+  console.log('JSON Server is running')
+})
+
+// config/index.js
+proxyTable: {
+      '/api/': 'http://localhost:8081/'
+    },
+
+```
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
