@@ -34,7 +34,7 @@ npm run build
 npm run build --report
 ```
 
-## mark down
+## Mark Down
 
 json-server模拟api设置(用POST请求会出错，使用express启动)
 
