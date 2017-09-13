@@ -15,7 +15,9 @@
       </div>
     </div>
     <div class="container">
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
     <div class="app-foot">
       <p>©  a vue page demo</p>

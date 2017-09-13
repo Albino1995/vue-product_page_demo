@@ -1,5 +1,4 @@
 import Vue from 'vue'
-// import App from './App'
 import Layout from './components/layout'
 import IndexPage from './pages/index'
 import VueRouter from 'vue-router'
