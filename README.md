@@ -15,6 +15,12 @@ vue init webpack ProductPage
 #安装vuex
 npm install vuex --save
 
+#安装json-server
+npm install json-server --save
+
+#安装vue-resource
+npm install vue-resource
+
 # install dependencies
 npm install
 
