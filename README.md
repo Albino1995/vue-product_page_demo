@@ -6,19 +6,19 @@
 
 ``` bash
 
-#全局安装vue脚手架
+# 全局安装vue脚手架
 npm install -g vue-cli 
 
-#创建项目
+# 创建项目
 vue init webpack ProductPage
 
-#安装vuex
+# 安装vuex
 npm install vuex --save
 
-#安装json-server
+# 安装json-server
 npm install json-server --save
 
-#安装vue-resource
+# 安装vue-resource
 npm install vue-resource
 
 # install dependencies
@@ -36,7 +36,7 @@ npm run build --report
 
 ## mark down
 
-#json-server模拟api设置(用POST请求会出错，使用express启动)
+# json-server模拟api设置(用POST请求会出错，使用express启动)
 
 ``` bash
 
