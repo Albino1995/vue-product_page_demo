@@ -24,17 +24,16 @@
       </div>
     </div>
     <div class="index-right">
-      <slide-show :slides="slides" :inv="invTime"></slide-show>
       <div class="index-board-list">
-        <div
-          class="index-board-item"
-          v-for="(item, index) in boardList"
-          :class="[{'line-last' : index % 2 !== 0}, 'index-board-' + item.id]">
+        <div class="index-board-item"
+             v-for="(item, index) in boardList"
+             :class="[{'line-last' : index % 2 !== 0},
+             'index-board-' + item.id]">
           <div class="index-board-item-inner">
             <h2>{{ item.title }}</h2>
             <p>{{ item.description }}</p>
             <div class="index-board-button">
-              <router-link class="button" :to="{path: 'detail/' + item.toKey}">立即购买</router-link>
+              <a href="" class="button">立即购买</a>
             </div>
           </div>
         </div>
@@ -47,6 +46,54 @@
   export default {
     data () {
       return {
+        boardList: [
+          {
+            title: '开放产品',
+            description: '开放产品是一款开放产品',
+            id: 'car',
+            toKey: 'analysis',
+            saleout: false
+          },
+          {
+            title: '品牌营销',
+            description: '品牌营销帮助你的产品更好地找到定位',
+            id: 'earth',
+            toKey: 'count',
+            saleout: false
+          },
+          {
+            title: '使命必达',
+            description: '使命必达快速迭代永远保持最前端的速度',
+            id: 'loud',
+            toKey: 'forecast',
+            saleout: true
+          },
+          {
+            title: '勇攀高峰',
+            description: '帮你勇闯高峰，到达事业的顶峰',
+            id: 'hill',
+            toKey: 'publish',
+            saleout: false
+          }
+        ],
+        newsList: [
+          {
+            title: '数据统计',
+            url: 'http://starcraft.com'
+          },
+          {
+            title: '数据预测',
+            url: 'http://warcraft.com'
+          },
+          {
+            title: '流量分析',
+            url: 'http://overwatch.com'
+          },
+          {
+            title: '广告发布',
+            url: 'http://hearstone.com'
+          }
+        ],
         productList: {
           pc: {
             title: 'PC产品',
