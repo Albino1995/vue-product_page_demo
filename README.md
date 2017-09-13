@@ -36,7 +36,7 @@ npm run build --report
 
 ## mark down
 
-#json-server模拟api设置
+#json-server模拟api设置(用POST请求会出错，使用express启动)
 
 ``` bash
 
