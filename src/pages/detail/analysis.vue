@@ -10,7 +10,7 @@
                   购买数量：
               </div>
               <div class="sales-board-line-right">
-                <v-counter @on-change="onParamChange('buyNum', $event)"></v-counter>
+                <VCounter @on-change="onParamChange('buyNum', $event)"></VCounter>
               </div>
           </div>
           <div class="sales-board-line">
@@ -18,7 +18,7 @@
                   产品类型：
               </div>
               <div class="sales-board-line-right">
-                  <v-selection :selections="buyTypes" @on-change="onParamChange('buyType', $event)"></v-selection>
+                  <VSelection :selections="buyTypes" @on-change=""></VSelection>
               </div>
           </div>
           <div class="sales-board-line">
@@ -26,9 +26,9 @@
                   有效时间：
               </div>
               <div class="sales-board-line-right">
-                  <v-chooser
+                  <VChooser
                   :selections="periodList"
-                  @on-change="onParamChange('period', $event)"></v-chooser>
+                  @on-change="onParamChange('period', $event)"></VChooser>
               </div>
           </div>
           <div class="sales-board-line">
@@ -36,9 +36,9 @@
                   产品版本：
               </div>
               <div class="sales-board-line-right">
-                  <v-mul-chooser
+                  <VMultiplyChooser
                   :selections="versionList"
-                  @on-change="onParamChange('versions', $event)"></v-mul-chooser>
+                  @on-change="onParamChange('versions', $event)"></VMultiplyChooser>
               </div>
           </div>
           <div class="sales-board-line">
@@ -84,7 +84,69 @@
 </template>
 
 <script>
-
+  import VSelection from '../../components/base/selection'
+  import VMultiplyChooser from '../../components/base/multiplyChooser'
+  import VChooser from '../../components/base/chooser'
+  import VCounter from '../../components/base/counter'
+  export default {
+    components: {
+      VSelection,
+      VMultiplyChooser,
+      VChooser,
+      VCounter
+    },
+    data () {
+      return {
+        buyNum: 0,
+        buyType: {},
+        versions: [],
+        period: {},
+        price: 0,
+        versionList: [
+          {
+            label: '客户版',
+            value: 0
+          },
+          {
+            label: '代理商版',
+            value: 1
+          },
+          {
+            label: '专家版',
+            value: 2
+          }
+        ],
+        periodList: [
+          {
+            label: '半年',
+            value: 0
+          },
+          {
+            label: '一年',
+            value: 1
+          },
+          {
+            label: '三年',
+            value: 2
+          }
+        ],
+        buyTypes: [
+          {
+            label: '入门版',
+            value: 0
+          },
+          {
+            label: '中级版',
+            value: 1
+          },
+          {
+            label: '高级版',
+            value: 2
+          }
+        ]
+      }
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

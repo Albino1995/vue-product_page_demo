@@ -10,7 +10,7 @@
                   购买数量：
               </div>
               <div class="sales-board-line-right">
-                  <v-counter :max="100" :min="20"></v-counter>
+                  <VCounter :max="100" :min="20"></VCounter>
               </div>
           </div>
           <div class="sales-board-line">
@@ -58,7 +58,37 @@
 </template>
 
 <script>
+  import VMulChooser from '../../components/base/multiplyChooser'
+  import VCounter from '../../components/base/counter'
 
+  export default {
+    components: {
+      VCounter,
+      VMulChooser
+    },
+    data () {
+      return {
+        versionList: [
+          {
+            label: '纸质报告',
+            value: 0
+          },
+          {
+            label: 'pdf',
+            value: 1
+          },
+          {
+            label: '页面报告',
+            value: 2
+          },
+          {
+            label: '邮件',
+            value: 3
+          }
+        ]
+      }
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
