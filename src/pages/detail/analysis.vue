@@ -18,7 +18,7 @@
                   产品类型：
               </div>
               <div class="sales-board-line-right">
-                  <VSelection :selections="buyTypes" @on-change=""></VSelection>
+                  <VSelection :selections="buyTypes" @on-change="onParamChange('buyType', $event)"></VSelection>
               </div>
           </div>
           <div class="sales-board-line">
@@ -88,6 +88,7 @@
   import VMultiplyChooser from '../../components/base/multiplyChooser'
   import VChooser from '../../components/base/chooser'
   import VCounter from '../../components/base/counter'
+  import _ from 'lodash'
   export default {
     components: {
       VSelection,
@@ -145,6 +146,32 @@
           }
         ]
       }
+    },
+    methods: {
+      onParamChange (attr, val) {
+        this[attr] = val
+        this.getPrice()
+      },
+      getPrice () {
+        let buyVersionsArray = _.map(this.versions, (item) => { return item.value })
+        let reqParams = {
+          buyNumber: this.buyNum,
+          buyType: this.buyType.value,
+          period: this.period.value,
+          version: buyVersionsArray.join(',')
+        }
+        this.$http.post('/api/getPrice', reqParams)
+          .then((res) => {
+            this.price = res.data.amount
+          })
+      }
+    },
+    mounted () {
+      this.buyNum = 1
+      this.buyType = this.buyTypes[0]
+      this.versions = [this.versionList[0]]
+      this.period = this.periodList[0]
+      this.getPrice()
     }
   }
 </script>

@@ -1,11 +1,11 @@
 <template>
-    <div class="counter-component">
-      <div class="counter-btn" @click="minus"> - </div>
-      <div class="counter-show">
-        <input type="text" v-model="number" @keyup="fixNumber">
-      </div>
-      <div class="counter-btn" @click="add"> + </div>
+  <div class="counter-component">
+    <div class="counter-btn" @click="minus"> - </div>
+    <div class="counter-show">
+      <input type="text" v-model="number" @keyup="fixNumber">
     </div>
+    <div class="counter-btn" @click="add"> + </div>
+  </div>
 </template>
 
 <script>
@@ -26,6 +26,7 @@ export default {
     }
   },
   watch: {
+    // 监听number变化
     number () {
       this.$emit('on-change', this.number)
     }
