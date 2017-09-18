@@ -21,6 +21,9 @@ npm install json-server --save
 # 安装vue-resource
 npm install vue-resource
 
+# 安装lodash
+npm install lodash
+
 # install dependencies
 npm install
 
