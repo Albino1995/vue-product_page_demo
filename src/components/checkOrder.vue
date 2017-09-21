@@ -51,10 +51,10 @@ export default {
         this.isShowFailDialog = true
         this.$emit('on-close-check-dialog')
       })
+    },
+    toOrderList () {
+      this.$router.push({path: '/order-list'})
     }
-//    toOrderList () {
-//      this.$router.push({path: '/orderList'})
-//    }
   }
 }
 </script>
