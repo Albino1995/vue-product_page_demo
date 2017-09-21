@@ -39,7 +39,7 @@ npm run build --report
 
 ## Mark Down
 
-json-server模拟api设置(用POST请求会出错，使用express启动)
+json-server模拟api设置(用POST请求会出错，使用express启动， 参考build/dev-server.js)
 
 ``` bash
 
