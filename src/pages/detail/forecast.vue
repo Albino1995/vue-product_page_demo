@@ -18,7 +18,7 @@
                   媒介：
               </div>
               <div class="sales-board-line-right">
-                  <v-mul-chooser :selections="versionList"></v-mul-chooser>
+                  <VMulChooser :selections="versionList"></VMulChooser>
               </div>
           </div>
           <div class="sales-board-line">

@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Dialog from '../components/dialog'
+import Dialog from './base/dialog'
 import LogForm from '../components/logForm'
 import RegForm from '../components/regForm'
 export default {
